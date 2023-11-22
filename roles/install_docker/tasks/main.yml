@@ -7,6 +7,9 @@
       - curl
       - gnupg
       - lsb-release
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
     state: present
     update_cache: true
 
@@ -26,6 +29,11 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
+    state: present
+
+- name: Install jsondiff
+  pip:
+    name: jsondiff
     state: present
 
 - name: Install docker-compose
