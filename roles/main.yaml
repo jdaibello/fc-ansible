@@ -3,22 +3,22 @@
   become: true
   roles:
     - install_nginx
-    # - install_docker
+    - install_docker
 
-# - hosts: manager
-#   remote_user: ubuntu
-#   become: true
-#   roles:
-#     - docker_swarm_manager
+- hosts: manager
+  remote_user: ubuntu
+  become: true
+  roles:
+    - docker_swarm_manager
 
-# - hosts: worker
-#   remote_user: ubuntu
-#   become: true
-#   roles:
-#     - docker_swarm_worker
+- hosts: worker
+  remote_user: ubuntu
+  become: true
+  roles:
+    - docker_swarm_worker
 
-# - hosts: manager
-#   remote_user: ubuntu
-#   become: true
-#   roles:
-#     - deploy_stack
+- hosts: manager
+  remote_user: ubuntu
+  become: true
+  roles:
+    - deploy_stack
